@@ -47,8 +47,12 @@ export default function SubmissionsPage() {
 
       <SubmissionTable
         columns={columns}
-        data={data?.data || []}
-        pageCount={data ? Math.ceil(data.total / pagination.pageSize) : 0}
+        data={data?.paginatedResults || []}
+        pageCount={
+          data && data.totalCount && data.totalCount.length > 0
+            ? Math.ceil(data.totalCount[0].count / pagination.pageSize)
+            : 0
+        }
         pagination={pagination}
         onPaginationChange={setPagination}
         sorting={sorting}

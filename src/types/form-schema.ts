@@ -1,5 +1,3 @@
-import { z } from "zod";
-
 export type FieldType =
   | "text"
   | "number"
@@ -32,6 +30,7 @@ export interface FormField {
 }
 
 export interface FormSchema {
+  id?: string;
   title: string;
   description: string;
   fields: FormField[];

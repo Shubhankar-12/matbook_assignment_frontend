@@ -13,12 +13,12 @@ export const getColumns = (
     cell: ({ row }) => <div className="font-medium">{row.getValue("id")}</div>,
   },
   {
-    accessorKey: "createdAt",
+    accessorKey: "created_at",
     header: "Created At",
     cell: ({ row }) => {
       return (
         <div className="text-muted-foreground">
-          {format(new Date(row.getValue("createdAt")), "PPpp")}
+          {format(new Date(row.getValue("created_at")), "PPpp")}
         </div>
       );
     },

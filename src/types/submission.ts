@@ -1,12 +1,11 @@
 export interface Submission {
   id: string;
-  createdAt: string; // ISO date string
+  created_at: string;
+  updated_at?: string;
   values: Record<string, any>;
 }
 
 export interface PaginatedSubmissions {
-  data: Submission[];
-  total: number;
-  page: number;
-  limit: number;
+  paginatedResults: Submission[];
+  totalCount: { count: number }[];
 }
